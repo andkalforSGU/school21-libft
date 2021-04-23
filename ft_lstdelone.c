@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/20 16:30:09 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 14:19:37 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 18:23:37 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstdelone(t_list *lst, void (*del) (void*))
 {
-	if (del)
+	if (del && *del)
 	{
 		del(lst->content);
 		free(lst);

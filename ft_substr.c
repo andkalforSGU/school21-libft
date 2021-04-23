@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:01:16 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/23 16:57:45 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 18:48:51 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,29 +14,22 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	lens;
 	unsigned int	cnt;
 	char			*res;
 
-	lens = 0;
 	cnt = start;
-	while (*(s + lens))
-		lens++;
-	if (start + 1 > lens)
-		return (NULL);
-	if (len > lens - start)
-		len = lens - start;
+	if (start + 1 > ft_strlen((char *)s))
+		return ((char *)ft_calloc(1, sizeof(char)));
+	if (len > ft_strlen((char *)s) - start)
+		len = ft_strlen((char *)s) - start;
 	res = (char *)malloc(sizeof(char) * (len + 1));
-	if (res)
-	{
-		while (cnt < len + start && *(s + cnt))
-		{
-			*(res + cnt - start) = *(s + cnt);
-			cnt++;
-		}
-		*(res + cnt) = 0;
-		return (res);
-	}
-	else
+	if (!res)
 		return (NULL);
+	while (cnt < len + start && *(s + cnt))
+	{
+		*(res + cnt - start) = *(s + cnt);
+		cnt++;
+	}
+	*(res + cnt) = '\0';
+	return (res);
 }
