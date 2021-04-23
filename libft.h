@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 18:10:58 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 16:43:03 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:35:09 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdio.h>
+# include <string.h>
 void	*ft_memset(void *b, int c, size_t len);
 void	ft_bzero(void *s, unsigned int n);
 void	*ft_memcpy(void *dst, const void *src, size_t n);

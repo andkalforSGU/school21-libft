@@ -6,11 +6,12 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:39:39 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/21 19:10:33 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 15:03:11 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {

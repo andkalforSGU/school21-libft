@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 15:45:04 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/21 19:10:43 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:14:06 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	while (*(s + len))
 		len++;
 	res = malloc(sizeof(char) * (len + 1));
-	if (!res)
+	if (!res || !f)
 		return (NULL);
 	while (*(s + cnt))
 	{

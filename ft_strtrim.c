@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:25:54 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 14:00:08 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:10:58 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 		endi++;
 	while ((ft_isinset(*(s1 + endi), set) || !(*(s1 + endi))) && endi)
 		endi--;
-	res = (char *)malloc(sizeof(char) * (endi + 1));
+	res = (char *)malloc(sizeof(char) * (endi + 2));
+	if (!res)
+		return (NULL);
 	res[endi + 1] = 0;
 	while (endi >= 0)
 	{

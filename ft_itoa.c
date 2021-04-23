@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 20:00:21 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 16:38:46 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:12:54 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ char	*ft_itoa(int n)
 	cnt = 0;
 	sign = 1 - 2 *(n < 0);
 	res = malloc(sizeof(char) *((ft_ilen(n) + (n < 0) + 1)));
+	if (!res)
+		return (NULL);
 	n *= sign;
 	while (n != 0 || cnt == 0)
 	{

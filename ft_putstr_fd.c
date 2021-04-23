@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 16:18:44 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 14:12:41 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:17:25 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ void	ft_putstr_fd(char *s, int fd)
 	size_t	len;
 
 	len = 0;
-	while (*(s + len))
-		len++;
-	write(fd, s, len);
+	if (fd >= 0)
+	{
+		while (*(s + len))
+			len++;
+		write(fd, s, len);
+	}
 }

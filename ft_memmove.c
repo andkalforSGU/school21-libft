@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 16:40:25 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/21 19:09:54 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/23 14:02:15 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char	*beg;
 
+	if (!dst || !src)
+		return (NULL);
 	beg = dst;
 	if (dst < src)
 	{
