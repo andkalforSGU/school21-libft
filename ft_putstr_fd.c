@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 16:18:44 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/23 14:17:25 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 17:20:18 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ void	ft_putstr_fd(char *s, int fd)
 {
 	size_t	len;
 
+	if (!s)
+		return ;
 	len = 0;
 	if (fd >= 0)
 	{

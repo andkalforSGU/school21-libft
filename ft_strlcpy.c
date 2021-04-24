@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:12:38 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/21 19:10:36 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 14:59:47 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,11 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	cnt = 0;
 	slen = 0;
+	if (!src)
+		return (0);
 	while (*(src + slen))
 		slen++;
-	if (dstsize == 0)
+	if (!dst || dstsize == 0)
 		return (slen);
 	while (cnt + 1 < dstsize && *(src + cnt))
 	{

@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/17 13:39:39 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/23 15:03:11 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 16:50:04 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,22 +20,24 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	size_t	slen;
 
 	cnt = 0;
-	slen = 0;
-	dlen = 0;
-	while (*(dst + dlen))
-		dlen++;
-	while (*(src + slen))
-		slen++;
-	if (dstsize < 2)
-		return (slen + dstsize);
-	while (cnt + 1 < dstsize - dlen && *(src + cnt))
+	dlen = ft_strlen((char *)dst);
+	slen = ft_strlen((char *)src);
+	if (dlen > dstsize)
+		return (dstsize + slen);
+	while (src[cnt])
 	{
-		*(dst + cnt + dlen) = *(src + cnt);
+		if (cnt + dlen + 1 >= dstsize)
+			break ;
+		dst[cnt + dlen] = src[cnt];
 		cnt++;
 	}
-	*(dst + cnt + dlen) = 0;
-	if (dlen < dstsize)
-		return (dlen + slen);
-	else
-		return (dstsize + slen);
+	dst[cnt + dlen] = 0;
+	while (cnt + dlen < dstsize && cnt + 1 == slen)
+	{
+		dst[cnt + dlen] = 0;
+		cnt++;
+	}
+	if (dstsize > dlen + slen)
+		return (slen + dlen);
+	return (dlen + slen + (cnt + slen < dstsize) * (cnt));
 }

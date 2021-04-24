@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:01:16 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/23 18:48:51 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 17:25:58 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	unsigned int	cnt;
 	char			*res;
 
+	if (!s)
+		return (NULL);
 	cnt = start;
 	if (start + 1 > ft_strlen((char *)s))
 		return ((char *)ft_calloc(1, sizeof(char)));
@@ -25,11 +27,13 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	res = (char *)malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (NULL);
-	while (cnt < len + start && *(s + cnt))
+	while (cnt < len + start)
 	{
 		*(res + cnt - start) = *(s + cnt);
+		if (!*(s + cnt))
+			break ;
 		cnt++;
 	}
-	*(res + cnt) = '\0';
+	*(res + len) = '\0';
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:38:13 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 16:39:02 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 17:21:53 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,8 @@ char	**ft_split(char const *s, char c)
 	size_t		wc;
 	size_t		wcnt;
 
+	if (!s)
+		return (NULL);
 	wcnt = 0;
 	wc = ft_wcount(s, c);
 	res = (char **)malloc(sizeof(char *) * (wc + 1));

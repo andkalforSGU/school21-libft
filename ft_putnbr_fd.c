@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/19 16:24:07 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/22 14:13:24 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 15:37:34 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putnbr_fd(int n, int fd)
 	char	dig;
 
 	len = 1;
-	if (ft_crutch(n, fd))
+	if (fd < 0 || ft_crutch(n, fd))
 		return ;
 	if (n < 0)
 	{

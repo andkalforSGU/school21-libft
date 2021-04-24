@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:25:54 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/23 14:10:58 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/24 17:22:36 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	int		endi;
 	char	*res;
 
+	if (!s1 || !set)
+		return (NULL);
 	endi = 0;
 	while (ft_isinset(*s1, set) && *s1)
 		s1++;
