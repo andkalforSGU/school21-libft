@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/16 12:56:21 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/24 16:52:06 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/25 17:26:12 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ int	ft_atoi(char *str)
 	if (ft_nlen(str) > 10)
 		return (-1);
 	if (ft_nlen(str) == 10 && sign < 0)
-		if (ft_strncmp(ft_substr(str, 0, ft_nlen(str)), "2147483648", 12) > 0)
+		if (ft_strncmp(str, "2147483648", 10) > 0)
 			return (-1);
 	if (ft_nlen(str) == 10 && sign > 0)
-		if (ft_strncmp(ft_substr(str, 0, ft_nlen(str)), "2147483647", 12) > 0)
+		if (ft_strncmp(str, "2147483647", 10) > 0)
 			return (-1);
 	while (*str >= '0' && *str <= '9')
 	{

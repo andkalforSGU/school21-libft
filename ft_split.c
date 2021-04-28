@@ -6,7 +6,7 @@
 /*   By: tvader <tvader@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/18 17:38:13 by tvader            #+#    #+#             */
-/*   Updated: 2021/04/24 17:21:53 by tvader           ###   ########.fr       */
+/*   Updated: 2021/04/25 17:27:33 by tvader           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,8 @@ static char	**ft_brkfree(char **arr, int n)
 		free(arr[cnt]);
 		arr[cnt++] = NULL;
 	}
-	free(arr);
+	if (arr)
+		free(arr);
 	arr = NULL;
 	return (arr);
 }
@@ -96,7 +97,7 @@ char	**ft_split(char const *s, char c)
 	wc = ft_wcount(s, c);
 	res = (char **)malloc(sizeof(char *) * (wc + 1));
 	if (!res)
-		return (ft_brkfree(res, wcnt));
+		return (NULL);
 	while (wcnt < wc)
 	{
 		while (*s == c)
